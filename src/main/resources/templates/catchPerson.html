@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-US" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <meta charset="utf-8"></meta>
-    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html"/>
     <title>Сatch me if you dare</title>
-    <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css"></link>
-    <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-glyphicons.css">
-    </link>
-    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css"></link>
 </head>
 <body>
-<h1>Хотите кого-нибудь поймать?</h1>
-<form th:action="@{/}" th:object="${person}" method="POST" >
-    <td>Имя<input type="text" th:field="*{name}"/></td>
-    <td>День недели<input type="text" th:field="*{name}"/></td>
-    <td><input type="submit" th:value="Отправить"/></td>
-</form>
+<div id="printTableRequest">
+    <table>
+    <form th:action="@{/}" th:object="${request}" method="POST"  >
+    <td>Имя <input type="text" th:field="*{name}"/></td>
+    <td> <input type="submit" th:value="Отправить"/></td>
+        <p>
+            <input type="button" onclick="history.back(-1); return false;" value="Назад"/>
+
+        </p>
+    </form>
+    </table>
+</div>
 </body>
 </html>
 

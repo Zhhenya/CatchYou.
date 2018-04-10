@@ -2,9 +2,36 @@
 <html lang="en-US" xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Сatch me if you dare</title>
 </head>
 <body>
-    <td th:text="${person.name}"></td>
+
+<table>
+    <td th:text="${exception}"></td>
+    <tr>
+        <td th:text="${request.getName()}"> </td>  <td th:text="${request.getPersonneNumber()}"> </td>
+    </tr>
+<tr>
+<td>День   </td> <td th:each="day : ${request.getNames()}">
+    <p th:text="${day}"/>
+</td>
+    </tr>
+    <tr>
+        <td>Вероятность появления в %   </td> <td th:each="prob : ${request.probabilityOfArrivalOfAGivenDayOfTheWeek}">
+        <p th:text="${prob}"/>
+    </td>
+    </tr>
+<tr>
+    <td>
+    <input type="button" onclick="history.back(-1); return false;" value="Назад"/>
+    </td>
+</tr>
+<tr>
+    <td>
+        <input type="button" onclick="history.back(-2); return false;" value="На главную"/>
+    </td>
+</tr>
+</table>
+
 </body>
 </html>
