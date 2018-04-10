@@ -103,6 +103,7 @@ public class ParseFile {
                     person.setDataAboutPerson(new AboutPerson());
                     person.getDataAboutPerson().lastElement().setDate(myCalendar.getTime());
                     countOfCellInRecord++;
+                    //если нет времени выхода - добавить(время входа и наоборот)
                     if(row.getCell(countOfCellInRecord).getStringCellValue().compareTo("") == 0)
                         person.getDataAboutPerson().lastElement().setEntryTime("00:00");
                     else {
@@ -141,6 +142,7 @@ public class ParseFile {
 
 
                     countOfCellInRecord += 3;
+                    //счет общего времени и промежутка рабочего времени за день
                     person.getDataAboutPerson().lastElement().calculateDuratinonOfStay();
                     person.addAllTime();
                 }

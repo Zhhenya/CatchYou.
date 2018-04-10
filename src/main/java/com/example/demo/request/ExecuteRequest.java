@@ -26,6 +26,7 @@ public class ExecuteRequest {
         return probabilityOfArrivalOfAGivenDayOfTheWeek;
     }
 
+    //вероятность для каждого дня, имя сортудника задано
     public static Vector<Double> getDayForProbability(Vector<Double> probabilityOfArrivalOfAGivenDayOfTheWeek, Vector<String> nameOdTheDays, double probability){
         Vector<Double> answProbabiliry = new Vector<>();
         for(int i = 0; i < probabilityOfArrivalOfAGivenDayOfTheWeek.size(); i++){

@@ -25,10 +25,6 @@ public class CatchAllPersonsController {
         model.addAttribute("exception", "");
         if(getRequest.getProbability() >= 0 && getRequest.getProbability() <= 100){
             if (ParseFile.parseFileForAllPersons(getRequest.getProbability()) != false){
-               /* ResponseToARequest res = new ResponseToARequest();
-                res.setAllP(ParseFile.getAllPersonRequest());
-                res.setNames(ParseFile.getAllNames());
-                model.addAttribute("allPersonRequest", res);*/
                model.addAttribute("request", getRequest.getProbability());
                 model.addAttribute("allPersonRequest", ParseFile.getAllPersonRequest());
             }
@@ -38,18 +34,6 @@ public class CatchAllPersonsController {
         else {
             model.addAttribute("exception", "Неверный формат входных данных");
         }
-
-      //  model.addAttribute("request", getRequest);
         return "whenToCatchAllPersons";
     }
-
-
-   /* @RequestMapping(value = "/diagram")
-    public String diagram(Model model){
-        if(ParseFile.getCountPersonInDay().size() == 0)
-            model.addAttribute("exception", "Нет данных");
-        model.addAttribute("x", Constant.hours);
-        model.addAttribute("y", ParseFile.getCountPersonInDay());
-        return "diagram";
-    }*/
 }
