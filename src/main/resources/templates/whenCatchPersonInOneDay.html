@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Сatch me if you dare</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td th:text="${exception}"></td>
+    </tr>
+    <tr>
+        <td th:text="${request.name}"></td>    <td th:text="${request.personneNumber}"></td>
+    </tr>
+    <tr>
+        <td>День </td>   <td>Вероятность появления</td>
+    </tr>
+    <tr>
+        <td th:text="${request.dayOfWeek}"></td>
+        <td th:text="${request.probability}"></td>  <td>%</td>
+    </tr>
+    <tr>
+        <td>
+            <br/>
+            <br/>
+            <input type="button" onclick="history.back(-1); return false;" value="Назад"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        <form action="/startPage">
+            <input type="button" value="На главную"/>
+        </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

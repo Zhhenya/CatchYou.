@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Сatch me if you dare</title>
+</head>
+<body>
+    <h1>Хотите кого-нибудь поймать?</h1>
+    <p>Выберите запрос</p>
+    <table>
+        <tr>
+            <form th:action="@{/catchPerson}" method="POST">
+                <td> <input type="submit" th:value="Вероятность_день_недели"/></td>
+            </form>
+        </tr>
+        <tr>
+            <form th:action="@{/catchPersonInOneDay}" method="POST"  >
+                <td> <input type="submit" th:value="Вероятность"/></td>
+            </form>
+        </tr>
+        <tr>
+            <form th:action="@{/catchPersonWithProbability}" method="POST"  >
+                <td> <input type="submit" th:value="День_Вероятность"/></td>
+            </form>
+        </tr>
+        <tr>
+            <form th:action="@{/catchAllPersonsWithProbability}" method="POST"  >
+                <td> <input type="submit" th:value="Список_сотрудников"/></td>
+            </form>
+        </tr>
+    </table>
+</body>
+</html>

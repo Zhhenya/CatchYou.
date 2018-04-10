@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Сatch me if you dare</title>
+</head>
+<body>
+<form th:action="@{/afterCatchAllPersons}" th:object="${request}" method="POST"  >
+    <td>Введите вероятность <input type="text" th:field="*{probability}" pattern="[0-9]{0,2}"/>  </td>
+    <td> <input type="submit" th:value="Отправить"/></td>
+</form>
+<input type="button" onclick="history.back(-1); return false;" value="На главную"/>
+</body>
+</html>

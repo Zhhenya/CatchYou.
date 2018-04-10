@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Сatch me if you dare</title>
+</head>
+<body>
+<div >
+    <form th:action="@{/afterCatch}" th:object="${request}" method="POST"  >
+        <td> Введите имя <input type="text" th:field="*{name}"/>  </td>
+        <td> Введите день недели <input type="text" th:field="*{dayOfTheWeek}" pattern="[1-7]"/>  </td>
+        <td> <input type="submit" th:value="Отправить"/></td>
+    </form>
+    <table>
+        <tr>
+        <td>
+            <input type="button" onclick="history.back(-1); return false;" value="Назад"/>
+        </td>
+        <br/>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

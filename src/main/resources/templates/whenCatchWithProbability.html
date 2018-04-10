@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>Сatch me if you dare</title>
+</head>
+<body>
+<table >
+    <tr>
+        <td th:text="${exception}"></td>
+    </tr>
+    <tr>
+        <td th:text="${request.name}"></td> <td th:text="${request.personneNumber}"></td>
+    </tr>
+    <tr>
+        <td>День </td>  <td th:each="day : ${nameOfTheDays}">
+            <p th:text="${day}"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Вероятность появления в %</td><td th:each="prob : ${request.probabilityOfArrivalOfAGivenDayOfTheWeek}">
+            <p th:text="${prob}"/>
+        </td>
+    </tr>
+    <tr>
+    <td>
+        <input type="button" onclick="history.back(-1); return false;" value="Назад"/>
+    </td>
+    </tr>
+</table>
+</body>
+</html>
